@@ -19,11 +19,12 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("https://waris-portfolio-7u2p.vercel.app//send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
-      });
+      const response = await fetch("https://waris-portfolio-7u2p.vercel.app/send", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, subject, message }),
+});
+
 
       const result = await response.json();
       if (result.success) {
