@@ -19,7 +19,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/send", {
+      const response = await fetch("https://waris-portfolio-7u2p.vercel.app//send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, subject, message }),
