@@ -1,25 +1,25 @@
-require("dotenv").config();
-const express = require("express");
-const nodemailer = require("nodemailer");
-const cors = require("cors");
+require('dotenv').config();
+const express = require('express');
+const nodemailer = require('nodemailer');
+const cors = require('cors');
 
 const app = express();
 
-/*  CORS (NO trailing slash) */
-app.use(
-  cors({
-    origin: "https://waris-portfolio-ten.vercel.app",
-    methods: ["GET", "POST"],
-  })
-);
+// ✅ CORS: allow only your frontend URL
+app.use(cors({
+  origin: "https://waris-portfolio-ten.vercel.app",
+  methods: ["GET", "POST"],
+}));
 
+// ✅ Parse JSON body
 app.use(express.json());
 
-/*  Health check (optional but recommended) */
+// ✅ Health check route (optional)
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
+// ✅ Nodemailer setup
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -30,15 +30,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-/* Send Email API */
+// ✅ POST /send route
 app.post("/send", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
-  /*  Validation (fixes 400 error) */
+  // ✅ Validate request body
   if (!name || !email || !subject || !message) {
     return res.status(400).json({
       success: false,
       message: "All fields are required",
+      body: req.body, // optional for debugging
     });
   }
 
@@ -58,5 +59,5 @@ app.post("/send", async (req, res) => {
   }
 });
 
-/*  REQUIRED for Vercel */
+// ✅ Export app for Vercel
 module.exports = app;
