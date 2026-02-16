@@ -29,6 +29,10 @@ import AWS  from './assets/tech_logo/AWS.jpg';
 import vercelLogo from './assets/tech_logo/vercel.png';
 import postgreLogo from './assets/tech_logo/postgre.png';
 import PHP from './assets/tech_logo/PHP.png';
+import kafka from './assets/tech_logo/kafka.png';
+
+import redis from './assets/tech_logo/redis.png';
+import neon from './assets/tech_logo/neon.png';
 
 // Experience Section Logo's
 
@@ -93,14 +97,19 @@ export const SkillsInfo = [
   {
     title: 'Backend',
     skills: [
-      { name: 'Springboot',logo: springbootLogo },
+     
       { name: 'Node JS', logo: nodejsLogo },
       { name: 'Express JS', logo: expressjsLogo },
       { name: 'MySQL', logo: mysqlLogo },
       { name: 'MongoDB', logo: mongodbLogo },
+      { name: 'NEON', logo: neon },
+      { name: 'KAFKA', logo: kafka },
+      { name: 'REDIS', logo: redis },
+      
       
       { name: 'PostgreSQL', logo: postgreLogo },
       { name: 'PHP', logo: PHP },
+       { name: 'Springboot',logo: springbootLogo },
     ],
   },
   {
