@@ -33,6 +33,7 @@ import kafka from './assets/tech_logo/kafka.png';
 
 import redis from './assets/tech_logo/redis.png';
 import neon from './assets/tech_logo/neon.png';
+import socket from './assets/tech_logo/socket.png';
 
 // Experience Section Logo's
 
@@ -105,6 +106,7 @@ export const SkillsInfo = [
       { name: 'NEON', logo: neon },
       { name: 'KAFKA', logo: kafka },
       { name: 'REDIS', logo: redis },
+      { name: 'Socket.IO', logo: socket },
       
       
       { name: 'PostgreSQL', logo: postgreLogo },
